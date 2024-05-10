@@ -77,6 +77,8 @@ class Login(Locators):
         locators.email_input.fill(email)
         locators.password_input.fill(password)
         locators.sign_in_button.click()
+        locators.cookie_accept.click()
+
 
     @pytest.mark.parametrize("group, email,password",
                              [(key, val['username'], val['password']) for key, val in credentials.items()])
@@ -88,6 +90,7 @@ class Login(Locators):
         locators.email_input.fill(email)
         locators.password_input.fill(password)
         locators.sign_in_button.click()
+        locators.cookie_accept.click()
         time.sleep(20)
 
 class VpnChange:

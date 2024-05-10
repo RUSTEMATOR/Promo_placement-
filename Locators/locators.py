@@ -58,3 +58,25 @@ class Locators:
     def tournament_promo_scroll_arrow(self):
         return self.page.locator("xpath=/html/body/div[1]/div[2]/main/div/div[2]/div/div[2]/div/div[2]/button[2]")
 
+
+    @property
+    def vip_promo_tab(self):
+        return self.page.locator("xpath=//a[contains(@class, 'promotions-container__link link')][1]")
+
+
+    @property
+    def lang_dropdown(self):
+        return self.page.locator("xpath=//div[contains(@class,"
+                                 " 'select-language-icons-with-code__button') and @aria-autocomplete='list'][1]").first
+
+    @property
+    def en_lang(self):
+        return self.page.get_by_role("option", name="en en")
+
+
+    @property
+    def cookie_accept(self):
+        return self.page.get_by_role("button", name="accept")
+
+
+
