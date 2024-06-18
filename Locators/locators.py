@@ -78,5 +78,13 @@ class Locators:
     def cookie_accept(self):
         return self.page.get_by_role("button", name="accept")
 
+    @property
+    def deposit_button(self):
+        return self.page.locator(".header .deposit-button.link-btn")
+
+    @property
+    def deposit_promo_button(self):
+        return self.page.locator(".payment-submit-default .payment-submit-default__button")
+
 
 
