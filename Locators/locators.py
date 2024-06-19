@@ -36,7 +36,7 @@ class Locators:
 
     @property
     def lobbypromo_scroll_arrow(self):
-        return self. page.locator("xpath=/html/body/div[1]/div[2]/main/div/div[7]/div/div[2]/button[2]")
+        return self.page.query_selector(".promotions-slider.slick-slider .slick-next")
 
     @property
     def burger_menu(self):

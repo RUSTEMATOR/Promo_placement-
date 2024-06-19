@@ -46,10 +46,16 @@ def test_master_domain_lobby_promo_slider(page: Page, group, email, password, is
         pass
     locators.lobby_promo_slider.scroll_into_view_if_needed()
     screenshot.capture_screenshot("EN", group, "Lobby slider")
-    time.sleep(10)
-    if locators.lobbypromo_scroll_arrow.is_visible():
+    time.sleep(3)
+
+    while locators.lobbypromo_scroll_arrow.is_enabled():
         locators.lobbypromo_scroll_arrow.click()
-    else:
+        time.sleep(1)
+        locators.lobbypromo_scroll_arrow.click()
+        time.sleep(1)
+        if page.locator('button.slick-disabled.slick-arrow.text-btn').first.is_visible():
+            screenshot.capture_screenshot("EN", group, "Lobby slider")
+            break
         screenshot.capture_screenshot("EN", group, "Lobby slider")
 
 
@@ -157,11 +163,14 @@ def test_master_domain_deposit(page: Page, group, email, password, is_anonymous)
 #         pass
 #     page.set_default_timeout(90000)  # Sets the timeout to 60 seconds
 #     locators.lobby_promo_slider.scroll_into_view_if_needed()
-#     screenshot.capture_screenshot("AU", group, "Lobby slider")
-#     time.sleep(20)
-#     if locators.lobbypromo_scroll_arrow.is_visible():
+#     while locators.lobbypromo_scroll_arrow.is_enabled():
 #         locators.lobbypromo_scroll_arrow.click()
-#     else:
+#         time.sleep(1)
+#         locators.lobbypromo_scroll_arrow.click()
+#         time.sleep(1)
+#         if page.locator('button.slick-disabled.slick-arrow.text-btn').first.is_visible():
+#             screenshot.capture_screenshot("AU", group, "Lobby slider")
+#             break
 #         screenshot.capture_screenshot("AU", group, "Lobby slider")
 #
 # @pytest.mark.au
@@ -214,8 +223,8 @@ def test_master_domain_deposit(page: Page, group, email, password, is_anonymous)
 #         locators.tournament_promo_scroll_arrow.click()
 #     else:
 #         screenshot.capture_screenshot_full("AU", group, "Tournaments")
-
-
+#
+#
 # @pytest.mark.au
 # @pytest.mark.parametrize("group, email,password, is_anonymous", [(key, val['username'], val['password'], False) for key, val in credentials.items()] + [("anonymous", None, None, True)])
 # def test_master_domain_deposit(page: Page, group, email, password, is_anonymous):
