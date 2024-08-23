@@ -6,7 +6,7 @@ browser_config = {
 
 urlEN = "https://kingbillycasino.com"
 
-urlAU = "https://kingbillywin16.com"
+urlAU = "https://kingbillywin18.com"
 
 
 class PromoPlacement:

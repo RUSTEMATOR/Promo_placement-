@@ -5,7 +5,7 @@ from Data.account_info import credentials
 from Locators.locators import Locators
 from Fucntions.functions import Screenshot, Login, ScreenshotFull
 
-# Promo placement test for the master domain
+# # Promo placement test for the master domain
 
 
 # @pytest.mark.ie
@@ -30,8 +30,8 @@ from Fucntions.functions import Screenshot, Login, ScreenshotFull
 #             screenshot.capture_screenshot("EN", group, "Main slider")
 #     else:
 #         screenshot.capture_screenshot("EN", group, "Main slider")
-#
-#
+
+
 # @pytest.mark.ie
 # @pytest.mark.parametrize("group, email,password, is_anonymous", [(key, val['username'], val['password'], False) for key, val in credentials.items()] + [("anonymous", None, None, True)])
 # def test_master_domain_lobby_promo_slider(page: Page, group, email, password, is_anonymous):
@@ -58,9 +58,9 @@ from Fucntions.functions import Screenshot, Login, ScreenshotFull
 #             if page.locator('button.slick-disabled.slick-arrow.text-btn').first.is_visible():
 #                 screenshot.capture_screenshot("EN", group, "Lobby slider")
 #                 break
-#
+
 #             screenshot.capture_screenshot("EN", group, "Lobby slider")
-#
+
 # @pytest.mark.ie
 # @pytest.mark.parametrize("group, email,password, is_anonymous", [(key, val['username'], val['password'], False) for key, val in credentials.items()] + [("anonymous", None, None, True)])
 # def test_master_domain_promo_page(page: Page, group, email, password, is_anonymous):
@@ -74,8 +74,8 @@ from Fucntions.functions import Screenshot, Login, ScreenshotFull
 #     page.goto("https://kingbillycasino.com/promotions")
 #     time.sleep(10)
 #     screenshot.capture_screenshot_full("EN", group, "Promo page")
-#
-#
+
+
 # @pytest.mark.ie
 # @pytest.mark.parametrize("group, email,password, is_anonymous", [(key, val['username'], val['password'], False) for key, val in credentials.items()] + [("anonymous", None, None, True)])
 # def test_master_domain_promo_page_vip(page: Page, group, email, password, is_anonymous):
@@ -91,8 +91,8 @@ from Fucntions.functions import Screenshot, Login, ScreenshotFull
 #     locators.vip_promo_tab.click()
 #     time.sleep(10)
 #     screenshot.capture_screenshot_full("EN", group, "Promo page VIP")
-#
-#
+
+
 # @pytest.mark.ie
 # @pytest.mark.parametrize("group, email,password, is_anonymous", [(key, val['username'], val['password'], False) for key, val in credentials.items()] + [("anonymous", None, None, True)])
 # def test_master_domain_promo_tournaments(page: Page, group, email, password, is_anonymous):
@@ -119,7 +119,7 @@ from Fucntions.functions import Screenshot, Login, ScreenshotFull
 #                 screenshot.capture_screenshot_full("EN", group, "Tournaments")
 #                 break
 #             screenshot.capture_screenshot_full("EN", group, "Tournaments")
-#
+
 # @pytest.mark.ie
 # @pytest.mark.parametrize("group, email,password, is_anonymous", [(key, val['username'], val['password'], False) for key, val in credentials.items()] + [("anonymous", None, None, True)])
 # def test_master_domain_deposit(page: Page, group, email, password, is_anonymous):
@@ -132,9 +132,9 @@ from Fucntions.functions import Screenshot, Login, ScreenshotFull
 #     locators.deposit_promo_button.scroll_into_view_if_needed()
 #     time.sleep(20)
 #     screenshot.capture_screenshot("EN", group, "Deposit")
-#
-#
-#
+
+
+
 # @pytest.mark.ie
 # @pytest.mark.parametrize("group, email,password, is_anonymous", [(key, val['username'], val['password'], False) for key, val in credentials.items()] + [("anonymous", None, None, True)])
 # def test_promo_profile(page: Page, group, email, password, is_anonymous):
@@ -160,7 +160,7 @@ def test_master_domain_main_slider_au(page: Page, group, email, password, is_ano
         login.base_login_au(email, password)
         time.sleep(80)
     else:
-        page.goto("https://www.kingbillycasino.com")
+        page.goto("https://www.kingbillywin18.com")
         pass
     screenshot.capture_screenshot("AU", group, "Main slider")
     if locators.scrolling_arrow.is_visible():
@@ -182,7 +182,7 @@ def test_master_domain_lobby_promo_slider_au(page: Page, group, email, password,
         login.base_login_au(email, password)
         time.sleep(20)
     else:
-        page.goto("https://www.kingbillycasino.com")
+        page.goto("https://www.kingbillywin18.com")
         pass
     page.set_default_timeout(90000)  # Sets the timeout to 60 seconds
     locators.lobby_promo_slider.scroll_into_view_if_needed()
@@ -209,7 +209,7 @@ def test_master_domain_promo_page_au(page: Page, group, email, password, is_anon
         time.sleep(80)
     else:
         pass
-    page.goto("https://www.kingbillycasino.com/promotions")
+    page.goto("https://www.kingbillywin18.com/promotions")
     time.sleep(80)
     screenshot.capture_screenshot_full("AU", group, "Promo page")
 
@@ -225,7 +225,7 @@ def test_master_domain_promo_page_vip(page: Page, group, email, password, is_ano
         time.sleep(80)
     else:
         pass
-    page.goto("https://www.kingbillycasino.com/promotions")
+    page.goto("https://www.kingbillywin18.com/promotions")
     locators.vip_promo_tab.click()
     time.sleep(80)
     screenshot.capture_screenshot_full("AU", group, "Promo page VIP")
@@ -242,7 +242,7 @@ def test_master_domain_promo_tournaments_au(page: Page, group, email, password, 
         page.set_default_timeout(90000)  # Sets the timeout to 60 seconds
     else:
         pass
-    page.goto("https://www.kingbillywin16.com/tournaments")
+    page.goto("https://www.kingbillywin18.com/tournaments")
     time.sleep(80)
     screenshot.capture_screenshot_full("AU", group, "Tournaments")
     if locators.lobbypromo_scroll_arrow is None:
@@ -281,6 +281,6 @@ def test_promo_profile(page: Page, group, email, password, is_anonymous):
     login = Login(page)
     login.base_login(email, password)
     time.sleep(30)
-    page.goto('https://www.kingbillycasino.com/profile/promo/casino')
+    page.goto('https://www.kingbillywin18.com/profile/promo/casino')
     time.sleep(80)
     screenshot.capture_screenshot_full("AU", group, "Promo profile")
