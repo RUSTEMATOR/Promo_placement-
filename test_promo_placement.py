@@ -4,7 +4,7 @@ from playwright.sync_api import Page
 from Data.account_info import credentials
 from Locators.locators import Locators
 from Fucntions.functions import Screenshot, Login, ScreenshotFull
-
+from Data.config import urlEN, urlAU
 # Promo placement test for the master domain
 
 
@@ -160,7 +160,7 @@ def test_master_domain_main_slider_au(page: Page, group, email, password, is_ano
         login.base_login_au(email, password)
         time.sleep(80)
     else:
-        page.goto("https://www.kingbillycasino.com")
+        page.goto(urlAU)
         pass
     screenshot.capture_screenshot("AU", group, "Main slider")
     if locators.scrolling_arrow.is_visible():
@@ -182,7 +182,7 @@ def test_master_domain_lobby_promo_slider_au(page: Page, group, email, password,
         login.base_login_au(email, password)
         time.sleep(20)
     else:
-        page.goto("https://www.kingbillycasino.com")
+        page.goto(urlAU)
         pass
     page.set_default_timeout(90000)  # Sets the timeout to 60 seconds
     locators.lobby_promo_slider.scroll_into_view_if_needed()
@@ -209,7 +209,7 @@ def test_master_domain_promo_page_au(page: Page, group, email, password, is_anon
         time.sleep(80)
     else:
         pass
-    page.goto("https://www.kingbillycasino.com/promotions")
+    page.goto(f'{urlAU}/promotions')
     time.sleep(80)
     screenshot.capture_screenshot_full("AU", group, "Promo page")
 
@@ -225,7 +225,7 @@ def test_master_domain_promo_page_vip(page: Page, group, email, password, is_ano
         time.sleep(80)
     else:
         pass
-    page.goto("https://www.kingbillycasino.com/promotions")
+    page.goto(f'{urlAU}/promotions')
     locators.vip_promo_tab.click()
     time.sleep(80)
     screenshot.capture_screenshot_full("AU", group, "Promo page VIP")
@@ -242,7 +242,7 @@ def test_master_domain_promo_tournaments_au(page: Page, group, email, password, 
         page.set_default_timeout(90000)  # Sets the timeout to 60 seconds
     else:
         pass
-    page.goto("https://www.kingbillywin16.com/tournaments")
+    page.goto(f'{urlAU}/tournaments')
     time.sleep(80)
     screenshot.capture_screenshot_full("AU", group, "Tournaments")
     if locators.lobbypromo_scroll_arrow is None:
@@ -281,6 +281,6 @@ def test_promo_profile(page: Page, group, email, password, is_anonymous):
     login = Login(page)
     login.base_login(email, password)
     time.sleep(30)
-    page.goto('https://www.kingbillycasino.com/profile/promo/casino')
+    page.goto(f'{urlAU}/profile/promo/casino')
     time.sleep(80)
     screenshot.capture_screenshot_full("AU", group, "Promo profile")
