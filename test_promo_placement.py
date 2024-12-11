@@ -5,7 +5,7 @@ from Data.account_info import credentials
 from Locators.locators import Locators
 from Fucntions.functions import Screenshot, Login, ScreenshotFull
 from Data.config import urlEN, urlAU
-# Promo placement test for the master domain
+#  Promo placement test for the master domain
 
 
 @pytest.mark.ie
